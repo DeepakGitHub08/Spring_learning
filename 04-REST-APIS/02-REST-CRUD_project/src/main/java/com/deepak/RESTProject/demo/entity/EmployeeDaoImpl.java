@@ -18,7 +18,7 @@ public class EmployeeDaoImpl implements EmployeeDAO {
         this.entityManager = entityManager;
     }
 
-    @Transactional
+
     @Override
     public Employee save(Employee employee) {
         return entityManager.merge(employee);
@@ -29,7 +29,6 @@ public class EmployeeDaoImpl implements EmployeeDAO {
         return entityManager.find(Employee.class, id);
     }
 
-    @Transactional
     @Override
     public void deleteEmployee(Integer id) {
         Employee delEmployee = entityManager.find(Employee.class, id);
